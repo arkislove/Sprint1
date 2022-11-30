@@ -20,4 +20,5 @@
     <string name="search">Search</string>
     <string name="fillLevelHigh">Collect now!</string>
     <string name="fillLevelLow">Do not collect</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

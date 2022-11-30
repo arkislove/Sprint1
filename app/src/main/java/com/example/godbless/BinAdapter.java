@@ -44,11 +44,15 @@ public class BinAdapter extends FirebaseRecyclerAdapter<BinModel,BinAdapter.myVi
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull BinModel model) {
         String filllevel;
         int value;
+        double latitude, longitude;
+
        holder.binNo.setText(model.getBin_number());
        holder.fillLevel.setText(model.getFill_level());
        holder.binStatus.setText(model.getLocation());
        filllevel = model.getFill_level();
        value = Integer.parseInt(filllevel);
+       latitude = model.getlati();
+       longitude = model.getlongi();
 
 
 
@@ -177,6 +181,8 @@ public class BinAdapter extends FirebaseRecyclerAdapter<BinModel,BinAdapter.myVi
                 Intent viewDetails = new Intent(view.getContext(), ViewDetails.class);
                 viewDetails.putExtra("binNumber", model.getBin_number());
                 viewDetails.putExtra("fillLevel", model.getFill_level());
+                viewDetails.putExtra("latitude", latitude);
+                viewDetails.putExtra("longitude", longitude);
                 view.getContext().startActivity(viewDetails);
             }
         });
